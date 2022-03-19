@@ -1,0 +1,1 @@
+# avtomat_dos
