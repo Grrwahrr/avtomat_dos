@@ -57,7 +57,7 @@ const PUB_KEY: [u8; 32] = [
 /// Download a file of targets from the server
 pub async fn fetch_targets() -> Option<Vec<Target>> {
     // Fetch the list from the server
-    let res = match reqwest::get("https://raw.githubusercontent.com/Grrwahrr/avtomat_dos/main/targets.bin").await {
+    let res = match reqwest::get("https://raw.githubusercontent.com/Grrwahrr/avtomat_dos/blob/master/targets.bin").await {
         Err(e) => {
             println!("Function fetch_targets() could not get file: {e}");
             return None;
