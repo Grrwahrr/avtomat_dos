@@ -1,7 +1,7 @@
 # A short explanation
 
 This program visits various russian websites in order to keep the servers under load. The idea is that many visitors (as in thousands) can overwhelm a server.
-This program is sort of a normal web browser, except it never displays the website it requests.  
+This program is sort of a normal web browser, except that it is fully automated and that it never displays the websites.  
 
 #### What websites does it visit?
 
