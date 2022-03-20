@@ -20,3 +20,10 @@ You download the executable and press the start button. Depending on the intensi
 The program works much like your web browser. It sends completely normal HTTP requests to the web server and loads various resources linked on the page, such as images. Unlike your browser, it will never display the data that was received but simply discard it. Thus, your computer does not waste processing time displaying the website.  
 All servers have a finite capacity to transmit data. While 1 or even 100 users are not able to overwhelm a server, all servers will eventually succumb if put under too much strain.  
 Experienced server operators can protect themselves from individuals who send too many requests or open too many connections from the same source. It is however much harder to protect against thousands of legit web requests.
+
+#### Is it safe for me to use?
+
+Again, this is close to a normal web browser, however it will visit the same website again and again over time. More than a normal user would. It seems reasonable to assume that you won't get into trouble for browsing the internet. As far as your internet provider is concerned, this is about as interesting to them as you downloading a large file over a long time.  
+If you are located in russia however, you may not be very safe to begin with, and you may want to be extra cautious.  
+  
+If you do not have an internet flat rate and pay for the data you receive, for instance if you use a mobile internet connection, you may not want to use this program as it will, by design, receive quite a lot of data.
