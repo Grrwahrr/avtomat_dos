@@ -1,3 +1,4 @@
 /target
+/.idea/
 avtomat-dos.iml
 Cargo.lock
