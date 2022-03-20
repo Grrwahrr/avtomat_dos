@@ -32,12 +32,13 @@ pub struct TargetPicker {
 
 impl TargetPicker {
     /// How often to update targets
-    const UPDATE_TIME_IN_SECS: u64 = 60; //TODO make this a sensible time = 7200 = 120 minutes
+    const UPDATE_TIME_IN_SECS: u64 = 7200; // 7200 = 120 minutes
 
-    /// How long to block a target for
-    const DEFAULT_BLOCK_TIME: u64 = 10; //TODO make this a sensible time = 600 = 10 minutes
+    /// How long to block a target for when starting a request (assume its offline)
+    const DEFAULT_BLOCK_TIME: u64 = 300; // Make this a sensible time = 300 = 5 minutes
 
-    /// How long to block an online target for
+    /// How long to block an online target for.
+    /// A presumably safe time of 3 seconds - we do not want to get blocked.
     const DEFAULT_ONLINE_BLOCK_TIME: u64 = 3;
 
     /// Constructor

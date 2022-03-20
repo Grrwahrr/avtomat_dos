@@ -102,11 +102,10 @@ impl Crawler {
                 if let Some(target) =
                     crawler_can_spawn_task_for_target(active_tasks, &intensity, &mut picker)
                 {
-                    println!("SPAWN MORE TASKS! {active_tasks}");
                     active_tasks += 1;
                     crawler_fetch_target(target, headers.get_random_headers(), tx.clone());
                 } else {
-                    sleep(Duration::from_millis(250)).await;
+                    sleep(Duration::from_millis(100)).await;
                 }
             }
         });
@@ -179,7 +178,7 @@ fn crawler_can_spawn_task_for_target(
     picker: &mut TargetPicker,
 ) -> Option<Target> {
     if let Ok(guard) = intensity.read() {
-        if active_tasks > *guard as u32 / 2 {
+        if active_tasks > *guard as u32 {
             return None;
         }
     };
@@ -214,9 +213,7 @@ fn crawler_process_task_report(
             state,
             requests_send,
         } => {
-            println!(
-                "RECEIVED CrawlerTaskMessage::TaskFinished message {target:?} {requests_send}"
-            );
+            println!("TaskFinished: {target:?} {requests_send}");
 
             // Reduce the number of active tasks
             *active_tasks -= 1;
@@ -277,8 +274,6 @@ fn crawler_update_targets(picker: &mut TargetPicker, tx: mpsc::Sender<CrawlerTas
 
 /// Request some resource
 fn crawler_fetch_target(target: Target, headers: Headers, tx: mpsc::Sender<CrawlerTaskMessage>) {
-    println!("CALL TO CRAWLER FETCH TARGET {target:?}");
-
     tokio::spawn(async move {
         let (requests_send, state) = match &target {
             Target::Https { url } => {
