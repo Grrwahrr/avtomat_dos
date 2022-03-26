@@ -27,3 +27,10 @@ Again, this is close to a normal web browser, however it will visit the same web
 If you are located in russia however, you may not be very safe to begin with, and you may want to be extra cautious.  
   
 If you do not have an internet flat rate and pay for the data you receive, for instance if you use a mobile internet connection, you may not want to use this program as it will, by design, receive quite a lot of data.
+
+#### How to download / install
+
+You can download the program from Github:  
+[Github release section](https://github.com/Grrwahrr/avtomat_dos/releases)
+
+Please note that I do not possess a digital certificate for these builds. This means that Windows / mscOS will warn when downloading and executing these files.

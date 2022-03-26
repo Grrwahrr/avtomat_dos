@@ -178,7 +178,7 @@ fn crawler_can_spawn_task_for_target(
     picker: &mut TargetPicker,
 ) -> Option<Target> {
     if let Ok(guard) = intensity.read() {
-        if active_tasks > *guard as u32 {
+        if active_tasks > (*guard as u32 * 2) {
             return None;
         }
     };
