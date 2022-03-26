@@ -33,4 +33,4 @@ If you do not have an internet flat rate and pay for the data you receive, for i
 You can download the program from Github:  
 [Github release section](https://github.com/Grrwahrr/avtomat_dos/releases)
 
-Please note that I do not possess a digital certificate for these builds. This means that Windows / mscOS will warn when downloading and executing these files.
+Please note that I do not possess a digital certificate for windows / macOS. This means that Windows / macOS will issue various warnings when downloading and executing these programs. These certificates have to be bought for each operating system, I'll look into it, but for now this can not be helped.
