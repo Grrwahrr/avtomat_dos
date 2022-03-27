@@ -54,8 +54,8 @@ pub struct Crawler {
 }
 
 impl Crawler {
-    pub fn new() -> Crawler {
-        let crawler = Crawler {
+    pub fn new() -> Self {
+        let crawler = Self {
             stats: Arc::new(RwLock::new(CrawlerStats::default())),
             intensity: Arc::new(RwLock::new(50)),
             state: Arc::new(RwLock::new(CrawlerState::Stopped)),
@@ -353,7 +353,7 @@ async fn crawler_crawl_website(url: String, headers: Headers) -> Option<(u32, Ta
         let image_requests: Vec<Request> = Document::from(html.as_str())
             .find(Name("img"))
             .filter_map(|node| node.attr("src"))
-            .filter(|src| src.contains(&host) || src.starts_with('/'))
+            .filter(|src| src.contains(&host) || !src.contains("://"))
             .filter_map(|img| client.get(img).build().ok())
             .collect();
 

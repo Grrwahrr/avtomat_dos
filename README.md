@@ -1,5 +1,8 @@
 # A short explanation
 
+[Jump to how to install section](https://github.com/Grrwahrr/avtomat_dos#how-to-download--install)  
+
+
 This program visits various russian websites in order to keep the servers under load. The idea is that many visitors (as in thousands) can overwhelm a server.
 This program is sort of a normal web browser, except that it is fully automated and that it never displays the websites.  
 
@@ -28,9 +31,32 @@ If you are located in russia however, you may not be very safe to begin with, an
   
 If you do not have an internet flat rate and pay for the data you receive, for instance if you use a mobile internet connection, you may not want to use this program as it will, by design, receive quite a lot of data.
 
-#### How to download / install
+### How to download / install
 
 You can download the program from Github:  
 [Github release section](https://github.com/Grrwahrr/avtomat_dos/releases)
 
 Please note that I do not possess a digital certificate for windows / macOS. This means that Windows / macOS will issue various warnings when downloading and executing these programs. These certificates have to be bought for each operating system, I'll look into it, but for now this can not be helped.
+
+#### How to download & install on Windows
+
+Click the link above or navigate to the _Release_ section.
+![step 1](assets/howto/screen1.png)
+
+Choose the Windows version & click it to download.
+![step 2](assets/howto/screen2.png)
+
+Allow the file to be stored on your computer. Then open it.
+![step 3](assets/howto/screen3.png)
+
+Click the _More info_ button.
+![step 4](assets/howto/screen4.png)
+
+Click _Run anyway_.
+![step 5](assets/howto/screen5.png)
+
+Click the _Start_ button.
+![step 6](assets/howto/screen6.png)
+
+That's it.
+![step 7](assets/howto/screen7.png)

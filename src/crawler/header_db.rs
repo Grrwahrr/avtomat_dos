@@ -10,7 +10,7 @@ pub struct Headers {
 
 impl Default for Headers {
     fn default() -> Self {
-        Headers {
+        Self {
             agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:97.0) Gecko/20100101 Firefox/97.0".to_string(),
             accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8".to_string(),
             accept_encoding: "gzip, deflate, br".to_string(),
@@ -27,8 +27,8 @@ pub struct HeaderDB {
 
 impl HeaderDB {
     /// Create the header database
-    pub fn new() -> HeaderDB {
-        HeaderDB {
+    pub fn new() -> Self {
+        Self {
             fallback: Headers::default(),
             data: HeaderDB::default_data(),
         }

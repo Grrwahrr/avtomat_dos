@@ -42,8 +42,8 @@ impl TargetPicker {
     const DEFAULT_ONLINE_BLOCK_TIME: u64 = 3;
 
     /// Constructor
-    pub fn new() -> TargetPicker {
-        TargetPicker {
+    pub fn new() -> Self {
+        Self {
             targets: HashMap::new(),
             next_update: SystemTime::now(),
             offset: 0,

@@ -40,9 +40,9 @@ impl Application for UserInterface {
     type Message = Message;
     type Flags = ();
 
-    fn new(_flags: ()) -> (UserInterface, Command<Message>) {
+    fn new(_flags: ()) -> (Self, Command<Message>) {
         (
-            UserInterface {
+            Self {
                 screen_active: Screen::Main,
                 slider_intensity: slider::State::new(),
                 button_start: button::State::new(),
