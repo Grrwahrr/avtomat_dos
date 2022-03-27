@@ -1,5 +1,6 @@
 /target
 /.idea/
 avtomat-dos.iml
-avtomat-dos.dmg
+avtomat-dos.macOS.m1.arm64.dmg
+avtomat-dos.macOS.intel.x64.dmg
 Cargo.lock
