@@ -40,23 +40,23 @@ Please note that I do not possess a digital certificate for windows / macOS. Thi
 
 #### How to download & install on Windows
 
-Click the link above or navigate to the _Release_ section.
+Click the link above or navigate to the _Release_ section.  
 ![step 1](assets/howto/screen1.png)
 
-Choose the Windows version & click it to download.
+Choose the Windows version & click it to download.  
 ![step 2](assets/howto/screen2.png)
 
-Allow the file to be stored on your computer. Then open it.
+Allow the file to be stored on your computer. Then open it.  
 ![step 3](assets/howto/screen3.png)
 
-Click the _More info_ button.
+Click the _More info_ button.  
 ![step 4](assets/howto/screen4.png)
 
-Click _Run anyway_.
+Click _Run anyway_.  
 ![step 5](assets/howto/screen5.png)
 
-Click the _Start_ button.
+Click the _Start_ button.  
 ![step 6](assets/howto/screen6.png)
 
-That's it.
+That's it.  
 ![step 7](assets/howto/screen7.png)
