@@ -1,6 +1,6 @@
 # A short explanation
 
-[Jump to how to download section](https://github.com/Grrwahrr/avtomat_dos#how-to-download-the-program)  
+[How to download section](https://github.com/Grrwahrr/avtomat_dos#how-to-download) | [Guide for Windows](assets/howto/WINDOWS.md)   
 
 
 This program visits various russian websites in order to keep the servers under load. The idea is that many visitors (as in thousands) can overwhelm a server.
@@ -31,6 +31,6 @@ If you are located in russia however, you may not be very safe to begin with, an
   
 If you do not have an internet flat rate and pay for the data you receive, for instance if you use a mobile internet connection, you may not want to use this program as it will, by design, receive quite a lot of data.
 
-### How to download the program
+### How to download
 
 [Guide for Windows](assets/howto/WINDOWS.md)
