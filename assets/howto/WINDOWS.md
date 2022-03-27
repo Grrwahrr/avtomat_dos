@@ -1,8 +1,8 @@
-### How to download & install on Windows  
+## How to download & install on Windows  
 
-Please note that I do not possess a digital certificate for windows / macOS. This means that Windows / macOS will issue various warnings when downloading and executing these programs. These certificates have to be bought for each operating system, I'll look into it, but for now this can not be helped.
+Please note that I do not possess a digital certificate for Windows. This means that Windows will issue various warnings when downloading and executing this program. This certificate has to be bought for each operating system, I'll look into it, but for now this can not be helped.
 
-Open the [Github release section](https://github.com/Grrwahrr/avtomat_dos/releases) or navigate to it.  
+Open the [Github release section](https://github.com/Grrwahrr/avtomat_dos/releases).  
 ![step 1](screen1.png)
 
 Choose the Windows version & click it to download.  

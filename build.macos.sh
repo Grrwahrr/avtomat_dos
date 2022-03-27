@@ -16,6 +16,9 @@ cp target/release/$BIN_NAME $MACOS_APP_DIR/Contents/MacOS/$BIN_NAME
 cp assets/AppIcon.icns $MACOS_APP_DIR/Contents/Resources
 cp assets/Info.plist $MACOS_APP_DIR/Contents
 
+echo "Signing"
+sudo codesign -fs Grrwahrr $MACOS_APP_DIR
+
 echo "Create dmg"
 mkdir $MACOS_APP_NAME
 mv $MACOS_APP_DIR $MACOS_APP_NAME
