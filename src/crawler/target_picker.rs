@@ -1,5 +1,6 @@
 use crate::targets::{hash_target, Target};
 use std::collections::HashMap;
+use std::fmt;
 use std::ops::Add;
 use std::time::{Duration, SystemTime};
 
@@ -9,6 +10,16 @@ pub enum TargetState {
     Unknown,
     Online,
     Offline,
+}
+
+impl fmt::Display for TargetState {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        match self {
+            TargetState::Unknown => write!(f, "Unknown"),
+            TargetState::Online => write!(f, "Online"),
+            TargetState::Offline => write!(f, "Offline"),
+        }
+    }
 }
 
 /// Info about the target, whether it is online and when we can next send requests

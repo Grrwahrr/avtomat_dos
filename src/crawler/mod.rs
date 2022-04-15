@@ -213,7 +213,7 @@ fn crawler_process_task_report(
             state,
             requests_send,
         } => {
-            println!("TaskFinished: {target:?} {requests_send}");
+            println!("TaskFinished: {target:?} {state} {requests_send}");
 
             // Reduce the number of active tasks
             *active_tasks -= 1;
@@ -329,6 +329,8 @@ async fn crawler_crawl_website(url: String, headers: Headers) -> Option<(u32, Ta
     let client = reqwest::ClientBuilder::new()
         .cookie_store(true)
         .user_agent(headers.agent)
+        .gzip(true)
+        .brotli(true)
         .default_headers(header_map)
         .tcp_keepalive(Duration::from_secs(5))
         .timeout(Duration::from_secs(30))
@@ -350,17 +352,39 @@ async fn crawler_crawl_website(url: String, headers: Headers) -> Option<(u32, Ta
         let html = res.text().await.unwrap_or_default();
 
         // Try to find pictures on the same host, build a get request for each
-        let image_requests: Vec<Request> = Document::from(html.as_str())
+        let mut requests_images: Vec<Request> = Document::from(html.as_str())
             .find(Name("img"))
             .filter_map(|node| node.attr("src"))
             .filter(|src| src.contains(&host) || !src.contains("://"))
             .filter_map(|img| client.get(img).build().ok())
             .collect();
 
+        // Try to find script files on the same host
+        let mut requests_scripts: Vec<Request> = Document::from(html.as_str())
+            .find(Name("script"))
+            .filter_map(|node| node.attr("src"))
+            .filter(|src| src.contains(&host) || !src.contains("://"))
+            .filter_map(|script| client.get(script).build().ok())
+            .collect();
+
+        // Try to find linked files on the same host (.ico, .css)
+        let mut requests_links: Vec<Request> = Document::from(html.as_str())
+            .find(Name("link"))
+            .filter_map(|node| node.attr("href"))
+            .filter(|src| {
+                (src.contains(&host) || !src.contains("://"))
+                    && (src.contains(".css") || src.contains(".ico") || src.contains(".png"))
+            })
+            .filter_map(|script| client.get(script).build().ok())
+            .collect();
+
+        let mut requests = Vec::new();
+        requests.append(&mut requests_images);
+        requests.append(&mut requests_scripts);
+        requests.append(&mut requests_links);
+
         // Create a bunch of futures to fetch images
-        let futures = image_requests
-            .into_iter()
-            .map(|img_req| client.execute(img_req));
+        let futures = requests.into_iter().map(|img_req| client.execute(img_req));
 
         // Send requests and wait for all images
         let responses = futures::future::join_all(futures).await;
